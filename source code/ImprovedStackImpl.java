@@ -18,7 +18,7 @@ public class ImprovedStackImpl extends ArrayList implements ImprovedStack {
         if (size() == 0) {
             return new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
         } else {
-            ReturnObject objectToReturn = get(size()-1);
+            ReturnObject objectToReturn = get(size() -1);
             remove(size() - 1);
             return objectToReturn;
         }

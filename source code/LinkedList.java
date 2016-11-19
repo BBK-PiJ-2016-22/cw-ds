@@ -39,13 +39,14 @@ public class LinkedList implements List {
         for (int i = 0; i < index; i++) {
             pointer = pointer.getNextNode();
         }
-        return new ReturnObjectImpl(pointer.getItem());
+        return pointer.getItem();
     }
 
     public ReturnObject remove(int index) {
         // removes node by index.
         int length = size();
         LinkedListNode pointer = header;
+        ReturnObject ObjectToReturn = get(index);
 
         if (index < 0 || index >= length) {
             return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
@@ -53,7 +54,7 @@ public class LinkedList implements List {
 
         if (length == 1 && index == 0) {
             header = null;
-            return new ReturnObjectImpl(null);
+            return ObjectToReturn;
         }
 
         if (index+1 == length) {
@@ -70,7 +71,7 @@ public class LinkedList implements List {
             }
             pointer.setNextNode(pointer.getNextNode().getNextNode());
         }
-        return new ReturnObjectImpl(null);
+        return ObjectToReturn;
     }
 
     public ReturnObject add(int index, Object item) {
@@ -112,8 +113,8 @@ public class LinkedList implements List {
         LinkedListNode pointer = header;
 
         if (header == null) {
-           header = new LinkedListNode(item);
-           return new ReturnObjectImpl(null);
+            header = new LinkedListNode(item);
+            return new ReturnObjectImpl(null);
 
         } else {
 

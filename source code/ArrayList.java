@@ -4,11 +4,11 @@
  */
 public class ArrayList implements List {
 
-    private Object[] list;
+    private ReturnObject[] list;
 
     public ArrayList() {
         // constructor method creates an empty array of various boxed types.
-        list = new Object[0];
+        list = new ReturnObject[0];
     }
 
     public boolean isEmpty() {
@@ -31,7 +31,7 @@ public class ArrayList implements List {
         if (index < 0 || index >= list.length) {
             return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
         } else {
-            return new ReturnObjectImpl(list[index]);
+            return list[index];
         }
 
     }
@@ -41,8 +41,8 @@ public class ArrayList implements List {
         if (index < 0 || index >= list.length) {
             return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
         }
-
-        Object[] temp = new Object[list.length - 1];
+        ReturnObject objectToReturn = list[index];
+        ReturnObject[] temp = new ReturnObject[list.length - 1];
 
         int aux  = 0; // auxiliary integer that gets set to one when index nr is reached.
 
@@ -59,7 +59,7 @@ public class ArrayList implements List {
 
         list = temp;
 
-        return new ReturnObjectImpl(null);
+        return objectToReturn;
     }
 
     public ReturnObject add(int index, Object item) {
@@ -72,21 +72,21 @@ public class ArrayList implements List {
             return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
         }
 
-        Object[] temp = new Object[list.length + 1]; // creates new temp array
+        ReturnObject[] temp = new ReturnObject[list.length + 1]; // creates new temp array
 
         int aux = 0; // auxiliary integer that gets set to one when index nr is reached.
 
         for (int i = 0; i < list.length; i++) {
 
             if (i == index && index != temp.length) {
-                temp[i] = item;
+                temp[i] = new ReturnObjectImpl(item);
 
                 temp[i + 1] = list[i];
 
                 aux = 1;
 
             } else {
-                temp[index] = item; // adds the new element
+                temp[index] = new ReturnObjectImpl(item); // adds the new element
             }
 
             if (i != index) {
@@ -109,14 +109,14 @@ public class ArrayList implements List {
             return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
         }
 
-        Object[] temp = new Object[list.length + 1]; // creates new temp array
+        ReturnObject[] temp = new ReturnObject[list.length + 1]; // creates new temp array
 
         // copies everything over to the new array
         for (int i = 0; i < list.length; i++) {
 
             temp[i] = list[i];
         }
-        temp[list.length] = item; // adds the new element
+        temp[list.length] = new ReturnObjectImpl(item); // adds the new element
 
         list = temp;
 

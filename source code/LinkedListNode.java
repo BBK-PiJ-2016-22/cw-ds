@@ -4,15 +4,16 @@
  */
 public class LinkedListNode {
 
-    private Object item;
+    private ReturnObject item;
     private LinkedListNode nextNode;
 
 
     public LinkedListNode(Object item) {
-        this.item = item;
+        // constructs a new ReturnObject
+        this.item = new ReturnObjectImpl(item);
     }
 
-    public Object getItem() {
+    public ReturnObject getItem() {
         // retrieves item from wrapper.
         return item;
     }

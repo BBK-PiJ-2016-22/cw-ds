@@ -5,10 +5,12 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList {
 
     public ReturnObject head() {
         // returns copy of first element in list.
+        ReturnObject objectToReturn = new ReturnObjectImpl(get(0).getReturnValue());
+
         if (isEmpty()) {
             return new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
         } else {
-            return get(0);
+            return objectToReturn;
         }
     }
 

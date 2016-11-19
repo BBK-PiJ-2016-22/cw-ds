@@ -8,6 +8,7 @@ public class StackImpl extends AbstractStack {
         super(new ArrayList());
     }
 
+
     public boolean isEmpty() {
         //  if internalList is empty, stack is empty.
         if (internalList.isEmpty()) {
