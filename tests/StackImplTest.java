@@ -51,7 +51,7 @@ public class StackImplTest {
     }
 
     @Test
-    public void push() throws Exception {
+    public void pushTest() throws Exception {
         Stack testOnePush = new StackImpl();
         Stack testTwoPush = new StackImpl();
 
@@ -68,7 +68,7 @@ public class StackImplTest {
     }
 
     @Test
-    public void top() throws Exception {
+    public void topTest() throws Exception {
         assertEquals(testOne.top().getReturnValue(), testOne.pop().getReturnValue());
         assertEquals(testTwo.top().getReturnValue(), testTwo.pop().getReturnValue());
         assertEquals(testThree.top().getReturnValue(), testThree.pop().getReturnValue());
@@ -79,7 +79,7 @@ public class StackImplTest {
     }
 
     @Test
-    public void pop() throws Exception {
+    public void popTest() throws Exception {
 
         for (int i = 50; i >= 0; i--) {
 
