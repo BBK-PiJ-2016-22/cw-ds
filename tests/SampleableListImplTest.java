@@ -20,7 +20,7 @@ public class SampleableListImplTest {
     }
 
     @Test
-    public void sample() throws Exception {
+    public void sampleTest() throws Exception {
         int a = 0;
         for (int i = 0; i < 50; i++) {
             assertEquals(test.sample().get(i).getReturnValue(),test.get(i+a).getReturnValue());
