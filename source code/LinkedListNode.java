@@ -14,7 +14,7 @@ public class LinkedListNode {
     }
 
     public ReturnObject getItem() {
-        // retrieves item from wrapper.
+        // retrieves item from node.
         return item;
     }
 
