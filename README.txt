@@ -6,5 +6,5 @@ I have included the other solution as well, and the files are placed in the fold
 
 
 Despite the instructions of not using external libraries I chose to create JUnit tests and inlude these, 
-they are not a part of the submission as such but a mereextra for the sake of praticing JUnit.  
+they are not a part of the submission as such but a mere extra for the sake of praticing JUnit.  
 
