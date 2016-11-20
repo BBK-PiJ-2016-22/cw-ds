@@ -5,6 +5,6 @@ I made this particular choice based on the fact that most getter functions are c
 I have included the other solution as well, and the files are placed in the folder named extra.
 
 
-Despite the instructions of not using external libraries I chose to create JUnittests and inlude these, 
+Despite the instructions of not using external libraries I chose to create JUnit tests and inlude these, 
 they are not a part of the submission as such but a mereextra for the sake of praticing JUnit.  
 
